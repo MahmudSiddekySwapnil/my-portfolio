@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Project details — Mahmud Siddeky" />
+    <title>Project | Mahmud Siddeky</title>
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <meta name="theme-color" content="#0b1220" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-blur">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html#projects" aria-label="Back to portfolio">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span class="fw-semibold">Mahmud Siddeky</span>
+        </a>
+        <div class="ms-auto d-flex gap-2">
+          <a class="btn btn-outline-light btn-sm" href="./index.html#projects">
+            <i class="bi bi-arrow-left me-1" aria-hidden="true"></i> Back
+          </a>
+          <a class="btn btn-primary btn-sm" href="./index.html#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="content" class="section hero-section">
+      <div class="container">
+        <div id="projectMissing" class="d-none">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="card card-modern">
+                <div class="card-body p-4 p-md-5">
+                  <div class="section-kicker">Project</div>
+                  <h1 class="h2 fw-bold mb-2">Project not found</h1>
+                  <p class="text-secondary-emphasis mb-4">
+                    This project id doesn’t exist. Go back and pick a project from the portfolio list.
+                  </p>
+                  <a class="btn btn-primary" href="./index.html#projects">
+                    View projects <i class="bi bi-arrow-right-short ms-1" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="projectView" class="d-none">
+          <div class="row align-items-end g-3 mb-4">
+            <div class="col-lg-8">
+              <div class="section-kicker reveal" id="projectKicker">Project details</div>
+              <h1 class="display-6 fw-bold reveal" id="projectTitle">Project</h1>
+              <p class="lead text-secondary-emphasis reveal" id="projectSubtitle"></p>
+              <div class="d-flex flex-wrap gap-2 mt-3 reveal" id="projectTags"></div>
+              <div class="d-flex flex-wrap gap-2 mt-3 reveal" id="projectLinks"></div>
+            </div>
+          </div>
+
+          <div class="row g-3 g-lg-4 mb-4">
+            <div class="col-12 reveal">
+              <div class="project-hero">
+                <img
+                  id="projectCover"
+                  class="project-hero-img"
+                  src=""
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="d-flex align-items-center justify-content-between mt-3">
+                <div class="fw-semibold">Screenshots</div>
+                <div class="small text-secondary-emphasis" id="projectGalleryCount"></div>
+              </div>
+              <div id="projectGallery" class="project-gallery mt-3" aria-label="Project screenshots"></div>
+              <div class="d-flex justify-content-center mt-3">
+                <button id="galleryLoadMore" class="btn btn-outline-light btn-sm d-none" type="button">
+                  Load more
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lightbox modal (Bootstrap) -->
+          <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content lightbox">
+                <div class="modal-header border-0 pb-0">
+                  <div class="small text-secondary-emphasis" id="lightboxCaption"></div>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-2">
+                  <div id="lightboxCarousel" class="carousel slide" data-bs-ride="false" data-bs-touch="true">
+                    <div class="carousel-inner" id="lightboxSlides"></div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev" aria-label="Previous image">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next" aria-label="Next image">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+                  <div id="lightboxThumbs" class="lightbox-thumbs mt-3" aria-label="Image thumbnails"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-3 g-lg-4">
+            <div class="col-lg-7 reveal">
+              <div class="card card-modern h-100">
+                <div class="card-body p-4">
+                  <h2 class="h5 fw-semibold mb-3">Overview</h2>
+                  <div class="text-secondary-emphasis" id="projectOverview"></div>
+                  <hr class="border-secondary border-opacity-25 my-4" />
+                  <h2 class="h5 fw-semibold mb-3">Key features</h2>
+                  <ul class="mb-0 text-secondary-emphasis" id="projectFeatures"></ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5 reveal">
+              <div class="card card-modern h-100">
+                <div class="card-body p-4">
+                  <h2 class="h5 fw-semibold mb-3">Tech & delivery</h2>
+                  <div class="d-flex flex-column gap-3">
+                    <div class="d-flex justify-content-between gap-3">
+                      <div class="text-secondary-emphasis">Role</div>
+                      <div class="fw-semibold text-end" id="projectRole"></div>
+                    </div>
+                    <div class="d-flex justify-content-between gap-3">
+                      <div class="text-secondary-emphasis">Timeline</div>
+                      <div class="fw-semibold text-end" id="projectTimeline"></div>
+                    </div>
+                    <div class="d-flex justify-content-between gap-3">
+                      <div class="text-secondary-emphasis">Stack</div>
+                      <div class="fw-semibold text-end" id="projectStack"></div>
+                    </div>
+                  </div>
+                  <hr class="border-secondary border-opacity-25 my-4" />
+                  <h2 class="h5 fw-semibold mb-3">Highlights</h2>
+                  <div class="d-flex flex-column gap-2" id="projectHighlights"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12 reveal">
+              <div class="card card-modern">
+                <div class="card-body p-4">
+                  <h2 class="h5 fw-semibold mb-3">Next steps</h2>
+                  <p class="text-secondary-emphasis mb-0" id="projectNext"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-4">
+      <div class="container d-flex flex-column flex-md-row gap-2 justify-content-between align-items-md-center">
+        <div class="small text-secondary-emphasis">© <span id="year"></span> Mahmud Siddeky.</div>
+        <div class="d-flex gap-2">
+          <a class="footer-link" href="./index.html#projects">Projects</a>
+          <a class="footer-link" href="./index.html#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="./js/projects.js" defer></script>
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>
+
