@@ -264,20 +264,44 @@ section[id], header[id]{
   gap: 1rem;
 }
 .about-photo-wrap{
-  width: 100%;
-  max-width: 320px;
-  margin: 1rem 0 1.15rem;
-  border-radius: var(--radius);
+  position:relative;
+    border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
-  box-shadow: 0 16px 44px rgba(0,0,0,.18);
 }
+
 .about-photo{
-  width: 100%;
-  height: auto;
+  width:100%;
   display:block;
+    border-radius: 20px;
+  overflow: hidden;
 }
+
+.about-photo-wrap::before{
+  content:"";
+  position:absolute;
+  inset:-20px;
+  background: radial-gradient(circle,#6ea8fe33,transparent);
+  filter:blur(20px);
+  z-index:-1;
+}
+
+.about-photo-wrap::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:20px;
+  background:linear-gradient(120deg,#6ea8fe,#b6f);
+  z-index:-1;
+  filter:blur(12px);
+  opacity:.35;
+}
+@media (max-width: 991px){
+  .about-photo-wrap{
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
 .glass-card{
   padding: 1.15rem 1.15rem;
   border-radius: var(--radius);
