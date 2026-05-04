@@ -1,0 +1,18 @@
+/* =====================================================
+   style.css — Master stylesheet
+   Imports all partials in the correct order.
+   ===================================================== */
+
+/* 1. Design tokens, resets, base utilities */
+@import './base.css';
+
+/* 2. Layout: navbar, sections, footer, back-to-top */
+@import './layout.css';
+
+/* 3. Reusable components: cards, chips, tags, forms, icons */
+@import './components.css';
+
+/* 4. Section-specific styles */
+@import './sections/hero.css';
+@import './sections/about.css';
+@import './sections/projects.css';
